@@ -5,6 +5,7 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 
 decimal precoInicial = 0;
 decimal precoPorHora = 0;
+decimal P_sair = 0;
 
 Console.WriteLine("Seja bem vindo ao sistema de estacionamento!\n" +
                   "Digite o preço inicial:");
@@ -43,7 +44,9 @@ while (exibirMenu)
             es.ListarVeiculos();
             break;
 
-        case "4":
+        case "4":  
+        // *IMPLEMENTADO MARCUS vINICIUS*
+            P_sair = 4;
             exibirMenu = false;
             break;
 
@@ -51,9 +54,17 @@ while (exibirMenu)
             Console.WriteLine("Opção inválida");
             break;
     }
+        // *IMPLEMENTADO MARCUS vINICIUS*
+        if ((P_sair) != (Convert.ToDecimal(4)))
+              {
+                Console.WriteLine("Pressione uma tecla para continuar");
+                Console.ReadLine();
+              }
+        else
+            {
+                Console.WriteLine("O programa finalizou!");
+                Thread.Sleep(2000);
+                Console.Clear();
+            }
 
-    Console.WriteLine("Pressione uma tecla para continuar");
-    Console.ReadLine();
 }
-
-Console.WriteLine("O programa se encerrou");
